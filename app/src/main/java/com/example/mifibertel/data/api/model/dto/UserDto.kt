@@ -1,6 +1,7 @@
 package com.example.mifibertel.data.api.model.dto
 
 import com.example.mifibertel.domain.model.User
+import com.google.gson.annotations.SerializedName
 
 /**
  * (DTO) que representa la estructura
@@ -11,9 +12,13 @@ data class UserDto(
     val id: Int,
     val username: String,
     val email: String,
+    @SerializedName("first_name")
     val firstName: String,
+    @SerializedName("last_name")
     val lastName: String,
+    @SerializedName("phone_number")
     val phoneNumber: String,
+    @SerializedName("is_client")
     val isClient: Boolean,
     // Campos adicionales que vienen de la API según tu serializer de Django
 ){

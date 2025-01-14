@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.mifibertel.presentation.SplashScreen
 import com.example.mifibertel.presentation.auth.AuthScreen
 import com.example.mifibertel.presentation.auth.AuthViewModel
+import com.example.mifibertel.presentation.auth.perfil.ProfileScreen
 import com.example.mifibertel.presentation.home.HomeScreen
 import kotlinx.coroutines.delay
 
@@ -53,10 +54,18 @@ fun AppNavigation(
 
         composable(NavRoutes.HOME) {
             HomeScreen(
+                navController = navController,
                 onLogout = {
                     navController.navigate(NavRoutes.AUTH) {
                         popUpTo(NavRoutes.HOME) { inclusive = true }
                     }
+                }
+            )
+        }
+        composable(NavRoutes.PROFILE) {
+            ProfileScreen(
+                onNavigateBack = {
+                    navController.navigateUp()// Regresar a la pantalla anterior
                 }
             )
         }

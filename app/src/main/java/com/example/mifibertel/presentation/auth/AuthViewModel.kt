@@ -51,7 +51,7 @@ class AuthViewModel @Inject constructor(
                 .onSuccess { token ->
                     _authState.value = AuthState.Success(token)
                     // Obtiene automáticamente la información del usuario tras login exitoso
-                    getCurrentUser()
+//                    getCurrentUser()
                 }
                 .onFailure { exception ->
                     _authState.value = AuthState.Error(exception.message ?: "Unknown error")
@@ -79,19 +79,19 @@ class AuthViewModel @Inject constructor(
     /**
      * Obtiene la información del usuario actual
      */
-    fun getCurrentUser() {
-        viewModelScope.launch {
-            _userState.value = UserState.Loading
-
-            getCurrentUserUseCase()
-                .onSuccess { user ->
-                    _userState.value = UserState.Success(user)
-                }
-                .onFailure { exception ->
-                    _userState.value = UserState.Error(exception.message ?: "Unknown error")
-                }
-        }
-    }
+//    fun getCurrentUser() {
+//        viewModelScope.launch {
+//            _userState.value = UserState.Loading
+//
+//            getCurrentUserUseCase()
+//                .onSuccess { user ->
+//                    _userState.value = UserState.Success(user)
+//                }
+//                .onFailure { exception ->
+//                    _userState.value = UserState.Error(exception.message ?: "Unknown error")
+//                }
+//        }
+//    }
     /**
      * Funcion que se encarga de cerrar sesion
      * */

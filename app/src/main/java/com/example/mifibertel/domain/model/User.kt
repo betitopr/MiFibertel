@@ -8,7 +8,7 @@ data class User(
     val id: Int,
     val username: String,
     val email: String,
-    val firstName: String,
+    val firstName: String, // Este campo está marcado como non-null
     val lastName: String,
     val phoneNumber: String,
     /** Indica si el usuario es un cliente (true) o un administrador (false) */

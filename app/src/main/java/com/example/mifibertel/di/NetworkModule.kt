@@ -67,7 +67,11 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())// Usa Gson para convertir JSON
+            .addConverterFactory(GsonConverterFactory.create(
+//                GsonBuilder()
+//                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+//                    .create()
+            ))// Usa Gson para convertir JSON
             .build()
     }
     // Crea y proporciona la interfaz de ApiService
