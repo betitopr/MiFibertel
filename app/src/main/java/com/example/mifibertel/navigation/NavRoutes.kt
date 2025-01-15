@@ -8,4 +8,6 @@ object NavRoutes {
     const val AUTH = "auth"
     const val HOME = "home"
     const val PROFILE = "profile" //Ruta para perfil
+    const val PAYMENTS = "payments"
+    const val TICKETS = "tickets"
 }

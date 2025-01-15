@@ -54,6 +54,8 @@ fun AppNavigation(
 
         composable(NavRoutes.HOME) {
             HomeScreen(
+                onNavigateToPayments = { navController.navigate(NavRoutes.PAYMENTS) },
+                onNavigateToTickets = { navController.navigate(NavRoutes.TICKETS) },
                 navController = navController,
                 onLogout = {
                     navController.navigate(NavRoutes.AUTH) {
@@ -68,6 +70,13 @@ fun AppNavigation(
                     navController.navigateUp()// Regresar a la pantalla anterior
                 }
             )
+        }
+        composable(NavRoutes.PAYMENTS) {
+            // Implementar PaymentsScreen más adelante
+        }
+
+        composable(NavRoutes.TICKETS) {
+            // Implementar TicketsScreen más adelante
         }
     }
 }
